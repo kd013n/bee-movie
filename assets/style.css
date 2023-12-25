@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@font-face {
+    font-display: swap;
+    font-family: 'Jedi';
+    font-style: normal;
+    src: url('Starjedi.woff2') format('woff2');
+}
+
+* {
+	cursor: pointer;
+}
+
+body {
+	margin: 0;
+	background-color: #000;
+	overflow: hidden !important;
+}
+
+body::after {
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 20vh;
+	background: linear-gradient(
+		to bottom,
+		rgba(0, 0, 0, 1) 71%,
+		rgba(0, 0, 0, 0.54) 79%,
+		rgba(0, 0, 0, 0) 100%
+	);
+	z-index: 1;
+}
+
+.audio {
+	z-index: 10;
+	position: fixed;
+	right: 0;
+	margin: 3vh;
+	border: none;
+	background-color: transparent;
+}
+
+.speaker_icon {
+	height: 5vw;
+	width: 5vw;
+	filter: invert(91%) sepia(100%) saturate(3603%) hue-rotate(334deg) brightness(105%) contrast(101%);
+}
+
+.stars {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	background-color: #fff;
+	z-index: 2;
+}
+
+.logo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
+	width: 100%;
+	opacity: 0;
+	animation: logo 7s ease-out 3s;
+}
+
+.logo p {
+	font-size: 45vh;
+	font-family: 'Jedi';
+	text-align: center;
+	letter-spacing: 1vw;
+	line-height: 35vh;
+	color: transparent;
+	-webkit-text-fill-color: transparent;
+	-webkit-text-stroke-width: 0.5rem;
+	-webkit-text-stroke-color: #ffe81f;
+}
+
+@keyframes logo {
+	0% {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(2);
+	}
+	70% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: translate(-50%, -50%) scale(0.1);
+	}
+}
+
+p {
+	color: #ffe81f;
+}
+
+#scroller {
+	font-family: 'Jedi';
+	font-weight: bold;
+	font-size: 350%;
+	text-align: center;
+	overflow: hidden;
+	letter-spacing: 0.65vw;
+	text-transform: lowercase;
+	height: 5500em;
+	width: 20em;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	margin-left: -10em;
+	z-index: 0;
+	transform: perspective(350px) rotateX(25deg);
+	transform-origin: 50% 100%;
+}
+
+#scroller::after {
+	position: absolute;
+	content: "";
+	bottom: 40%;
+	left: 0;
+	right: 0;
+	top: 0;
+}
+
+#content {
+	position: absolute;
+	top: 100%;
+	animation: scoller 5600s linear 10s;
+}
+
+@keyframes scoller {
+	0% {
+		top: 100%;
+	}
+	100% {
+		top: -200%;
+	}
+}
+
+#title,
+#subtitle {
+	text-align: center;
+	line-height: 1.5rem;
+}
+
+#subtitle {
+	font-size: 3.5rem;
+}
